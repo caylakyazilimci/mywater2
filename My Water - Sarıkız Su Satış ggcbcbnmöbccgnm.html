@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<!-- saved from url=(0079)https://819c4c0b-a670-481d-ac35-a442e740502f-00-2qre553511ze1.sisko.replit.dev/ -->
+<html lang="tr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Water - Sarıkız Su Satış</title>
+    <link href="./My Water - Sarıkız Su Satış ggcbcbnmöbccgnm_files/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            min-height: 100vh;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #1976d2 0%, #1565c0 100%);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+        }
+
+        .cart-icon {
+            position: relative;
+            color: white;
+            font-size: 1.5rem;
+            text-decoration: none;
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: #ff4444;
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            font-size: 0.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .main-content {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+
+        .footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .nav-links {
+                gap: 1rem;
+            }
+            
+            .main-content {
+                padding: 0 1rem;
+            }
+        }
+    </style>
+    
+<style>
+    .hero {
+        background: linear-gradient(135deg, #00bcd4 0%, #0097a7 50%, #006064 100%);
+        color: white;
+        text-align: center;
+        padding: 6rem 2rem;
+        border-radius: 20px;
+        margin-bottom: 4rem;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('https://images.unsplash.com/photo-1550093479-fe744be2ba08?w=1200') center/cover;
+        opacity: 0.3;
+        z-index: 1;
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 2;
+    }
+
+    .hero h1 {
+        font-size: 4rem;
+        margin-bottom: 1.5rem;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        font-weight: 700;
+    }
+
+    .hero p {
+        font-size: 1.4rem;
+        margin-bottom: 3rem;
+        opacity: 0.95;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .cta-button {
+        display: inline-block;
+        background: linear-gradient(135deg, #ff5722 0%, #e64a19 100%);
+        color: white;
+        padding: 1.2rem 3rem;
+        text-decoration: none;
+        border-radius: 50px;
+        font-weight: bold;
+        font-size: 1.1rem;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        box-shadow: 0 8px 25px rgba(255, 87, 34, 0.3);
+    }
+
+    .cta-button:hover {
+        background: linear-gradient(135deg, #e64a19 0%, #d84315 100%);
+        transform: translateY(-3px);
+        box-shadow: 0 15px 35px rgba(255, 87, 34, 0.4);
+    }
+
+    .products-section {
+        margin: 3rem 0;
+    }
+
+    .section-title {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+        color: #1976d2;
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    }
+
+    .products-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 2.5rem;
+        margin-top: 3rem;
+    }
+
+    .product-card {
+        background: white;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+        transition: all 0.4s ease;
+        cursor: pointer;
+        position: relative;
+        border: 1px solid rgba(0,188,212,0.1);
+    }
+
+    .product-card:hover {
+        transform: translateY(-15px) scale(1.02);
+        box-shadow: 0 25px 50px rgba(0,188,212,0.15);
+        border-color: rgba(0,188,212,0.3);
+    }
+
+    .product-image {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+    }
+
+    .product-card:hover .product-image {
+        transform: scale(1.05);
+    }
+
+    .product-info {
+        padding: 1.5rem;
+    }
+
+    .product-name {
+        font-size: 1.3rem;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+        color: #333;
+    }
+
+    .product-description {
+        color: #666;
+        margin-bottom: 1rem;
+        font-size: 0.9rem;
+    }
+
+    .product-price {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #1976d2;
+        margin-bottom: 1rem;
+    }
+
+    .add-to-cart-btn {
+        width: 100%;
+        background: linear-gradient(135deg, #00bcd4 0%, #0097a7 100%);
+        color: white;
+        border: none;
+        padding: 1rem 1.5rem;
+        border-radius: 25px;
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        box-shadow: 0 8px 20px rgba(0,188,212,0.2);
+    }
+
+    .add-to-cart-btn:hover {
+        background: linear-gradient(135deg, #0097a7 0%, #006064 100%);
+        transform: translateY(-3px);
+        box-shadow: 0 12px 25px rgba(0,188,212,0.3);
+    }
+
+    .product-info {
+        padding: 2rem;
+    }
+
+    .product-name {
+        font-size: 1.4rem;
+        font-weight: 600;
+        margin-bottom: 0.8rem;
+        color: #333;
+        line-height: 1.3;
+    }
+
+    .product-description {
+        color: #666;
+        margin-bottom: 1.5rem;
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    .product-price {
+        font-size: 1.8rem;
+        font-weight: 700;
+        background: linear-gradient(135deg, #00bcd4, #0097a7);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 1.5rem;
+    }
+
+    .features {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2.5rem;
+        margin: 4rem 0;
+    }
+
+    .feature {
+        text-align: center;
+        padding: 2.5rem;
+        background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        border: 1px solid rgba(0,188,212,0.1);
+        transition: all 0.3s ease;
+    }
+
+    .feature:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 40px rgba(0,188,212,0.15);
+        border-color: rgba(0,188,212,0.3);
+    }
+
+    .feature-icon {
+        font-size: 3.5rem;
+        background: linear-gradient(135deg, #00bcd4, #0097a7);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 1.5rem;
+        filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.1));
+    }
+
+    .feature h3 {
+        color: #333;
+        margin-bottom: 1rem;
+        font-size: 1.3rem;
+        font-weight: 600;
+    }
+
+    .feature p {
+        color: #666;
+        line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+        .hero h1 {
+            font-size: 2rem;
+        }
+        
+        .products-grid {
+            grid-template-columns: 1fr;
+        }
+        
+        .features {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <a href="https://819c4c0b-a670-481d-ac35-a442e740502f-00-2qre553511ze1.sisko.replit.dev/" class="logo">💧 My Water</a>
+            <ul class="nav-links">
+                <li><a href="https://819c4c0b-a670-481d-ac35-a442e740502f-00-2qre553511ze1.sisko.replit.dev/">Ana Sayfa</a></li>
+                <li><a href="https://819c4c0b-a670-481d-ac35-a442e740502f-00-2qre553511ze1.sisko.replit.dev/#products">Ürünler</a></li>
+                <li><a href="https://819c4c0b-a670-481d-ac35-a442e740502f-00-2qre553511ze1.sisko.replit.dev/cart">Sepet</a></li>
+            </ul>
+            <a href="https://819c4c0b-a670-481d-ac35-a442e740502f-00-2qre553511ze1.sisko.replit.dev/cart" class="cart-icon">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count" id="cart-count">0</span>
+            </a>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        
+<section class="hero">
+    <div class="hero-content">
+        <h1>💧 Sarıkız Doğal Kaynak Suyu</h1>
+        <p>Türkiye'nin en temiz kaynaklarından çıkan, doğal mineralleri içeren premium kalitede su. Sofralarınızda doğanın en saf hali.</p>
+        <a href="https://819c4c0b-a670-481d-ac35-a442e740502f-00-2qre553511ze1.sisko.replit.dev/#products" class="cta-button">
+            <i class="fas fa-water"></i> Ürünleri İncele
+        </a>
+    </div>
+</section>
+
+<section class="features">
+    <div class="feature">
+        <div class="feature-icon">🚚</div>
+        <h3>Hızlı Teslimat</h3>
+        <p>Siparişleriniz 24 saat içinde kapınızda</p>
+    </div>
+    <div class="feature">
+        <div class="feature-icon">💧</div>
+        <h3>100% Doğal</h3>
+        <p>Doğal kaynak suyu, hiçbir katkı maddesi içermez</p>
+    </div>
+    <div class="feature">
+        <div class="feature-icon">🎯</div>
+        <h3>Kalite Garantisi</h3>
+        <p>Sarıkız markası ile premium kalite</p>
+    </div>
+</section>
+
+<section class="products-section" id="products">
+    <h2 class="section-title">Ürünlerimiz</h2>
+    <div class="products-grid">
+        
+        <div class="product-card" onclick="window.location.href=&#39;/product/1&#39;">
+            <img src="./My Water - Sarıkız Su Satış ggcbcbnmöbccgnm_files/format_webp" alt="Sarıkız Doğal Kaynak Suyu 0.5L" class="product-image">
+            <div class="product-info">
+                <h3 class="product-name">Sarıkız Doğal Kaynak Suyu 0.5L</h3>
+                <p class="product-description">0.5 litre cam şişe doğal kaynak suyu</p>
+                <div class="product-price">5.00 ₺</div>
+                <button class="add-to-cart-btn" onclick="event.stopPropagation(); addToCart(1)">
+                    <i class="fas fa-cart-plus"></i> Sepete Ekle
+                </button>
+            </div>
+        </div>
+        
+        <div class="product-card" onclick="window.location.href=&#39;/product/3&#39;">
+            <img src="./My Water - Sarıkız Su Satış ggcbcbnmöbccgnm_files/0087a865dc70979b63ecfcde48228f90_109512.jpg" alt="Sarıkız Doğal Kaynak Suyu 1.5L" class="product-image">
+            <div class="product-info">
+                <h3 class="product-name">Sarıkız Doğal Kaynak Suyu 1.5L</h3>
+                <p class="product-description">1.5 litre plastik şişe doğal kaynak suyu</p>
+                <div class="product-price">12.75 ₺</div>
+                <button class="add-to-cart-btn" onclick="event.stopPropagation(); addToCart(3)">
+                    <i class="fas fa-cart-plus"></i> Sepete Ekle
+                </button>
+            </div>
+        </div>
+        
+        <div class="product-card" onclick="window.location.href=&#39;/product/4&#39;">
+            <img src="./My Water - Sarıkız Su Satış ggcbcbnmöbccgnm_files/834abb85-30f2-45da-a8bd-e1a91c17ea3d.png" alt="Sarıkız Doğal Kaynak Suyu 5L" class="product-image">
+            <div class="product-info">
+                <h3 class="product-name">Sarıkız Doğal Kaynak Suyu 5L</h3>
+                <p class="product-description">5 litre damacana doğal kaynak suyu</p>
+                <div class="product-price">36.50 ₺</div>
+                <button class="add-to-cart-btn" onclick="event.stopPropagation(); addToCart(4)">
+                    <i class="fas fa-cart-plus"></i> Sepete Ekle
+                </button>
+            </div>
+        </div>
+        
+        <div class="product-card" onclick="window.location.href=&#39;/product/5&#39;">
+            <img src="./My Water - Sarıkız Su Satış ggcbcbnmöbccgnm_files/4b6c8e95-197c-44f7-b9d5-33882f0773bf.png" alt="Sarıkız Doğal Kaynak Suyu 19L" class="product-image">
+            <div class="product-info">
+                <h3 class="product-name">Sarıkız Doğal Kaynak Suyu 19L</h3>
+                <p class="product-description">19 litre büyük damacana doğal kaynak suyu</p>
+                <div class="product-price">160.00 ₺</div>
+                <button class="add-to-cart-btn" onclick="event.stopPropagation(); addToCart(5)">
+                    <i class="fas fa-cart-plus"></i> Sepete Ekle
+                </button>
+            </div>
+        </div>
+        
+        <div class="product-card" onclick="window.location.href=&#39;/product/6&#39;">
+            <img src="./My Water - Sarıkız Su Satış ggcbcbnmöbccgnm_files/dogal-mineralli-maden-suyu-15-03-2021-225445.jpg" alt="Sarıkız Doğal Mineralli Maden Suyu 250ml" class="product-image">
+            <div class="product-info">
+                <h3 class="product-name">Sarıkız Doğal Mineralli Maden Suyu 250ml</h3>
+                <p class="product-description">250ml cam şişede doğal mineralli maden suyu</p>
+                <div class="product-price">13.50 ₺</div>
+                <button class="add-to-cart-btn" onclick="event.stopPropagation(); addToCart(6)">
+                    <i class="fas fa-cart-plus"></i> Sepete Ekle
+                </button>
+            </div>
+        </div>
+        
+        <div class="product-card" onclick="window.location.href=&#39;/product/7&#39;">
+            <img src="./My Water - Sarıkız Su Satış ggcbcbnmöbccgnm_files/limon-aromali-maden-suyu-15-03-2021-225625.jpg" alt="Sarıkız Limon Aromalı Maden Suyu 250ml" class="product-image">
+            <div class="product-info">
+                <h3 class="product-name">Sarıkız Limon Aromalı Maden Suyu 250ml</h3>
+                <p class="product-description">250ml cam şişede limon aromalı maden suyu</p>
+                <div class="product-price">16.75 ₺</div>
+                <button class="add-to-cart-btn" onclick="event.stopPropagation(); addToCart(7)">
+                    <i class="fas fa-cart-plus"></i> Sepete Ekle
+                </button>
+            </div>
+        </div>
+        
+        <div class="product-card" onclick="window.location.href=&#39;/product/8&#39;">
+            <img src="./My Water - Sarıkız Su Satış ggcbcbnmöbccgnm_files/karpuz-cilek-aromali-maden-suyu-15-03-2021-225923.jpg" alt="Sarıkız Karpuz Çilek Aromalı Maden Suyu 250ml" class="product-image">
+            <div class="product-info">
+                <h3 class="product-name">Sarıkız Karpuz Çilek Aromalı Maden Suyu 250ml</h3>
+                <p class="product-description">250ml cam şişede karpuz çilek aromalı maden suyu</p>
+                <div class="product-price">16.75 ₺</div>
+                <button class="add-to-cart-btn" onclick="event.stopPropagation(); addToCart(8)">
+                    <i class="fas fa-cart-plus"></i> Sepete Ekle
+                </button>
+            </div>
+        </div>
+        
+        <div class="product-card" onclick="window.location.href=&#39;/product/9&#39;">
+            <img src="./My Water - Sarıkız Su Satış ggcbcbnmöbccgnm_files/mandalina-aromali-maden-suyu-15-03-2021-225957.jpg" alt="Sarıkız Mandalina Aromalı Maden Suyu 250ml" class="product-image">
+            <div class="product-info">
+                <h3 class="product-name">Sarıkız Mandalina Aromalı Maden Suyu 250ml</h3>
+                <p class="product-description">250ml cam şişede mandalina aromalı maden suyu</p>
+                <div class="product-price">16.75 ₺</div>
+                <button class="add-to-cart-btn" onclick="event.stopPropagation(); addToCart(9)">
+                    <i class="fas fa-cart-plus"></i> Sepete Ekle
+                </button>
+            </div>
+        </div>
+        
+        <div class="product-card" onclick="window.location.href=&#39;/product/10&#39;">
+            <img src="./My Water - Sarıkız Su Satış ggcbcbnmöbccgnm_files/elma-aromali-maden-suyu-15-03-2021-225800.jpg" alt="Sarıkız Elma Aromalı Maden Suyu 250ml" class="product-image">
+            <div class="product-info">
+                <h3 class="product-name">Sarıkız Elma Aromalı Maden Suyu 250ml</h3>
+                <p class="product-description">250ml cam şişede elma aromalı maden suyu</p>
+                <div class="product-price">16.75 ₺</div>
+                <button class="add-to-cart-btn" onclick="event.stopPropagation(); addToCart(10)">
+                    <i class="fas fa-cart-plus"></i> Sepete Ekle
+                </button>
+            </div>
+        </div>
+        
+        <div class="product-card" onclick="window.location.href=&#39;/product/11&#39;">
+            <img src="./My Water - Sarıkız Su Satış ggcbcbnmöbccgnm_files/sarikiz-gazoz-19052020-045729.jpg" alt="Sarıkız Gazoz 250ml" class="product-image">
+            <div class="product-info">
+                <h3 class="product-name">Sarıkız Gazoz 250ml</h3>
+                <p class="product-description">250ml cam şişede geleneksel Sarıkız gazoz</p>
+                <div class="product-price">25.00 ₺</div>
+                <button class="add-to-cart-btn" onclick="event.stopPropagation(); addToCart(11)">
+                    <i class="fas fa-cart-plus"></i> Sepete Ekle
+                </button>
+            </div>
+        </div>
+        
+        <div class="product-card" onclick="window.location.href=&#39;/product/12&#39;">
+            <img src="./My Water - Sarıkız Su Satış ggcbcbnmöbccgnm_files/SARIKIZ-DOĞAL-KAYNAK-SUYU-BOZDAĞ-0-33-LT-x-12.png" alt="Sarıkız Doğal Kaynak Suyu 330ml x12" class="product-image">
+            <div class="product-info">
+                <h3 class="product-name">Sarıkız Doğal Kaynak Suyu 330ml x12</h3>
+                <p class="product-description">330ml plastik şişe 12li koli doğal kaynak suyu</p>
+                <div class="product-price">25.00 ₺</div>
+                <button class="add-to-cart-btn" onclick="event.stopPropagation(); addToCart(12)">
+                    <i class="fas fa-cart-plus"></i> Sepete Ekle
+                </button>
+            </div>
+        </div>
+        
+    </div>
+</section>
+
+    </main>
+
+    <footer class="footer">
+        <p>© 2024 My Water - Sarıkız Su Satış. Tüm hakları saklıdır.</p>
+    </footer>
+
+    <script>
+        // Simple cart management
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        
+        function updateCartCount() {
+            const count = cart.reduce((sum, item) => sum + item.quantity, 0);
+            document.getElementById('cart-count').textContent = count;
+        }
+        
+        function addToCart(productId, quantity = 1) {
+            fetch('/api/add-to-cart', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    product_id: productId,
+                    quantity: quantity
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    const existingItem = cart.find(item => item.id === productId);
+                    if (existingItem) {
+                        existingItem.quantity += quantity;
+                    } else {
+                        cart.push({
+                            id: productId,
+                            name: data.product.name,
+                            price: data.product.price,
+                            image: data.product.image,
+                            quantity: quantity
+                        });
+                    }
+                    localStorage.setItem('cart', JSON.stringify(cart));
+                    updateCartCount();
+                    alert('Ürün sepete eklendi!');
+                }
+            });
+        }
+        
+        updateCartCount();
+    </script>
+    
+    
+
+</body></html>
